@@ -24,5 +24,4 @@ for(let i=mid;i<n;i++){
         }
     }
 }
-
 console.log(arr);
