@@ -2,6 +2,7 @@
 const promt=require('prompt-sync')()
 
 let arr=[4,5,6,12,34,56,67]
+
 let t=Number(promt("Enter your Element-::"))
 let index=-1
 let st=0;

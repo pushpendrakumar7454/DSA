@@ -9,7 +9,6 @@ for(let i=0;i<arr.length;i++){
         index=i;
         break;
     }
-
 }
 if(index==-1){
     console.log("not found");
