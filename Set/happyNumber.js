@@ -1,20 +1,57 @@
-let promt=require('prompt-sync')()
+let num = 19;
 
-let num=Number(promt("Enter your number-::"))
-let result=num;
+let set = new Set();
+let result = num;
 
-while(result!==1 && result!==4){
-    let sum=0;
+while (true) {
 
-    while(result>0){
-        let dig=result%10
-        sum=sum+(dig*dig)
-        result=Math.floor(result/10)
+    let sum = 0;
+
+    while (result > 0) {
+        let dig = result % 10;
+        sum = sum + (dig * dig);
+        result = Math.floor(result / 10);
     }
-   result=sum;
+
+    result = sum;
+
+    if (result === 1) {
+        console.log(num + " is Happy Number");
+        break;
+    }
+
+    if (set.has(result)) {
+        console.log(num + " is NOT Happy Number");
+        break;
+    }
+
+    set.add(result);
 }
 
-if(result===1) console.log(num," is Happy Number");
 
-else console.log(num, " Is not Happy Number");
+
+
+
+
+
+
+// let promt=require('prompt-sync')()
+
+// let num=Number(promt("Enter your number-::"))
+// let result=num;
+
+// while(result!==1 && result!==4){
+//     let sum=0;
+
+//     while(result>0){
+//         let dig=result%10
+//         sum=sum+(dig*dig)
+//         result=Math.floor(result/10)
+//     }
+//    result=sum;
+// }
+
+// if(result===1) console.log(num," is Happy Number");
+
+// else console.log(num, " Is not Happy Number");
 
