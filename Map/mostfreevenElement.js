@@ -12,17 +12,16 @@ for(let i=0;i<arr.length;i++){
 }
 
 let ans=-1
-let freMax=0;
+let mostFre=0;
 
-for(let [num,fre] of map){
+for(let [num,freq] of map){
     if(num%2==0){
-        if(fre>freMax){
-            freMax=fre
+        if(freq>mostFre){
+            mostFre=freq
             ans=num
-        }else if(fre===freMax && num<ans){
+        }else if(freq===mostFre && num<ans){
             ans=num
         }
     }
 }
 console.log(ans);
-
