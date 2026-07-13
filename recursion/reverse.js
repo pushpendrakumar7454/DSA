@@ -10,5 +10,4 @@ function reverse(n){
 
 }
 reverse(n)
-
 console.log(rev);
