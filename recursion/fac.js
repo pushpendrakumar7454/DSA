@@ -1,5 +1,4 @@
 let prompt = require("prompt-sync")();
-
 let num = Number(prompt("Enter your num-::"));
 
 function factorial(num){
