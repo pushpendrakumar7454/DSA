@@ -19,10 +19,32 @@ let b=Number(prompt("Enter second number-::"))
 
 
 // better approach
-while(a!=b){
-    if(a>b) a=a-b
-    else b=b-a
+// while(a!=b){
+//     if(a>b) a=a-b
+//     else b=b-a
+// }
+
+// console.log(b);
+
+
+// optimize approach
+
+
+
+while(b!=0){
+    let rem=a%b
+    a=b
+    b=rem
 }
 
-console.log(b);
+console.log(a);
+
+
+// function gcd(a, b) {
+//     if (b == 0) return a;
+//     return gcd(b, a % b);
+// }
+
+// console.log(gcd(12, 18));
+
 
