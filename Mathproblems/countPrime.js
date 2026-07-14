@@ -6,7 +6,7 @@ let count=0;
 
 for(let i=2;i<=num;i++){
     isPrirme=true;
-    for(let j=2;j<i;j++){
+    for(let j=2;j<=Math.sqrt(i);j++){
         if(i%j==0){
             isPrirme=false;
             break
