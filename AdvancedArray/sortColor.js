@@ -16,15 +16,15 @@ while(i<=k){
         swap(arr,i,j)
         i++;
         j++
-    }else if(arr[i]===2){
+    }else if(arr[i]==2){
         swap(arr,i,k)
-        k--
+        k--;
     }else{
         i++
     }
 }
 
-
 console.log(arr);
+
 
 
