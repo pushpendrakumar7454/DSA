@@ -6,11 +6,15 @@ let ans=arr[0]
 let count=1;
 let n=arr.length
 
-for(let i=1;i<n;i++){
-    if(count===0){
+for(let i=0;i<n;i++){
+    if(count==0){
         ans=arr[i]
         count=1
+
     }else if(arr[i]==ans) count++
     else count--
 }
+
 console.log(ans);
+
+
