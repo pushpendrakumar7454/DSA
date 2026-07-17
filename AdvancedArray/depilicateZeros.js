@@ -1,6 +1,7 @@
 let arr=[3,4,0,4,5,0,32,0]
 
 let count=0;
+
 let n=arr.length
 
 for(let i=0;i<arr.length;i++){
