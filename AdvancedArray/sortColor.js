@@ -1,5 +1,6 @@
 // Dutch National Flag Algorithm
 let arr=[2,0,1,1,2,0,1,1]
+
 let l=arr.length
 
 function swap(arr,i,j){
