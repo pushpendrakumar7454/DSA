@@ -2,7 +2,6 @@ let arr = [-1, 0, 1, 2, -1, -4];
 
 function threeSum(arr) {
   arr.sort((a, b) => a - b);
-
   let ans = [];
 
   for (let i = 0; i < arr.length - 2; i++) {
