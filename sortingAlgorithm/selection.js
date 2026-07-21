@@ -12,6 +12,7 @@ for(let i=0;i<n-1;i++){
         let temp=arr[min]
         arr[min]=arr[i]
         arr[i]=temp
+        
     }
 
 }
