@@ -50,6 +50,7 @@ function findpartitions(arr,f,l){
     i++
     swap(arr,i,l)
     return i
+
 }
 
 
@@ -59,30 +60,13 @@ function swap(arr,i,j){
     arr[j]=temp
 }
 
-
 function quickSort(arr,f,l){
     if(f>l) return
-    let pInx=findpartitions(arr,f,l)
-    quickSort(arr,f,pInx-1)
-    quickSort(arr,pInx+1,l)
+    let pIdx=findpartitions(arr,f,l)
+    quickSort(arr,f,pIdx-1)
+    quickSort(arr,pIdx+1,l)
 }
 
-let arr=[54,56,43,2,32,13]
+let arr=[34,455,73,2,3,4,5]
 quickSort(arr,0,arr.length-1)
 console.log(arr);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
