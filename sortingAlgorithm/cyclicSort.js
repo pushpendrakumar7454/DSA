@@ -1,4 +1,5 @@
-function cyclicSort(arr,){
+
+function cyclicSort(arr){
     let i=0;
     while(i<arr.length){
         let cIdx=arr[i]-1
