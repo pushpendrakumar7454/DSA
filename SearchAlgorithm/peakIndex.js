@@ -1,20 +1,20 @@
 let arr = [2,3,4,5,10,2,1];
 
-let st = 0;
-let ed = arr.length - 1;
+let st=0,ed=arr.length-1
+let ans=-1
 
-while (st < ed) {
-    let mid = Math.floor((st + ed) / 2);
-
-    if (arr[mid] < arr[mid + 1]) {
-        st = mid + 1;
-    } else {
-        ed = mid;
+while(st<ed){
+    let mid=Math.floor((st+ed)/2)
+    if(arr[mid]<arr[mid+1]){
+        ans=mid+1
+        st=mid+1
+    }else{
+        ans=mid
+        ed=mid
     }
 }
 
-console.log(st); // 3
-console.log(arr[st]); // 10
+console.log(ans);
 
 
 
