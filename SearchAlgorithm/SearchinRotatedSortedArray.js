@@ -14,6 +14,7 @@ while(st<=ed){
         if(t>=arr[st] &&t<arr[mid]){
             ed=mid-1
         }else st=mid+1
+    //right roated    
     }else{
         if(t<arr[ed] && t>=arr[mid]) st=mid+1
         else ed=mid-1
