@@ -13,8 +13,8 @@ while(st<ed){
         ed=mid
     }
 }
-
 console.log(ans);
+
 
 
 
