@@ -29,6 +29,8 @@ function quickSort(arr,f,l){
 }
 
 let arr=[44,3,2,3,56,4,6,7]
+
+
 quickSort(arr,0,arr.length-1)
 console.log(arr);
 
