@@ -14,9 +14,14 @@ class LL{
        
     }
     inserAtFirst(val){
+        this.size++
         let newNode=new Node(val)
         if(this.head==null){
              this.head=newNode
+             return
         }
+        newNode.next=this.head
+        this.head=newNode
+
     }
 }
