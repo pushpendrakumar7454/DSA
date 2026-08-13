@@ -41,6 +41,16 @@ class LL {
         }
         temp.next = newNode
     }
+    deletedFirst(val) {
+        let newNode = new Node(val)
+
+        if (this.head == null) {
+            console.log("empty LInked List")
+            return
+        }
+        this.size--
+            this.head = this.head.next
+    }
 
     printLL(head) {
         if (head == null) {
@@ -70,4 +80,6 @@ obj.inserAtFirst(25);
 obj.printLL(obj.head);
 obj.inserAtLast(100)
 obj.inserAtLast(102)
+obj.printLL(obj.head);
+obj.deletedFirst()
 obj.printLL(obj.head);
