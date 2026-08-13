@@ -51,6 +51,22 @@ class LL {
         this.size--
             this.head = this.head.next
     }
+    deletedLast(val) {
+        let newNode = new Node(val)
+
+        if (this.head == null) {
+            console.log("This  is EMpty Linked List");
+            return
+
+        }
+        this.size--
+            let temp = this.head
+        while (temp.next.next !== null) {
+            temp = temp.next
+        }
+        temp.next = null
+
+    }
 
     printLL(head) {
         if (head == null) {
@@ -83,3 +99,5 @@ obj.inserAtLast(102)
 obj.printLL(obj.head);
 obj.deletedFirst()
 obj.printLL(obj.head);
+obj.deletedLast()
+obj.printLL(obj.head)
