@@ -25,6 +25,23 @@ class LL {
         this.head = newNode;
     }
 
+    inserAtLast(val) {
+        this.size++
+            let newNode = new Node(val)
+
+        if (this.head === null) {
+            this.head = newNode
+
+            return
+        }
+        let temp = this.head
+        while (temp.next != null) {
+            temp = temp.next
+
+        }
+        temp.next = newNode
+    }
+
     printLL(head) {
         if (head == null) {
             console.log("Empty Linked List");
@@ -50,5 +67,7 @@ obj.inserAtFirst(89);
 obj.inserAtFirst(6);
 obj.inserAtFirst(9);
 obj.inserAtFirst(25);
-
+obj.printLL(obj.head);
+obj.inserAtLast(100)
+obj.inserAtLast(102)
 obj.printLL(obj.head);
