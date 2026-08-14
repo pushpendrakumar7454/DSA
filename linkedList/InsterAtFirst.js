@@ -41,12 +41,14 @@ class LL {
     deletedFirst(val) {
         let newNode = new Node(val)
         if (this.head == null) {
-            console.log("This is EMpty Linked LIst")
+            console.log("This is Empty Linked List")
             return
         }
+
         this.size--
             this.head = this.head.next
     }
+
 
     printLL(head) {
         if (head === null) {
