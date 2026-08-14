@@ -76,29 +76,27 @@ class LL {
         newNode.next = temp.next
         temp.next = newNode
     }
-
-    deletedPos(val, pos) {
+    deletedPos(pos) {
         if (this.head == null) {
-            console.log("This is Empty Linked List")
+            console.log("This is EMpty Linked LIst")
             return
         }
         if (pos < 0 && pos > this.size + 1) {
-            console.log("not Posible")
+            console.log("Not Posible")
             return
         }
+
         if (pos == 1) {
             this.head = this.head.next
             this.size--
-                return
         }
         let temp = this.head
         for (let i = 1; i < pos - 1; i++) {
-            let temp = temp.next
+            temp = temp.next
         }
 
         temp.next = temp.next.next
         this.size--
-
     }
 
 

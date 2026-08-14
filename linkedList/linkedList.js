@@ -82,6 +82,31 @@ class LL {
         newNode.next = temp.next
         temp.next = newNode
     }
+    deletedPos(pos) {
+        if (this.head == null) {
+            console.log("This is EMty Linked List")
+            return
+        }
+
+        if (pos < 0 && pos > this.size + 1) {
+
+            console.log("Not Posible")
+            return
+        }
+
+        if (pos === 1) {
+            this.head = this.head.next
+            this.size--
+                return
+        }
+        let temp = this.head
+        for (let i = 1; i < pos - 1; i++) {
+            temp = temp.next
+
+        }
+        temp.next = temp.next.next
+        this.size--
+    }
 
     printLL(head) {
         if (head == null) {
@@ -117,4 +142,6 @@ obj.printLL(obj.head);
 obj.deletedLast()
 obj.printLL(obj.head)
 obj.inserAtPos(49, 2)
+obj.printLL(obj.head)
+obj.deletedPos(2)
 obj.printLL(obj.head)
