@@ -68,6 +68,21 @@ class LL {
 
     }
 
+    inserAtPos(val, pos) {
+        this.size++
+            let newNode = new Node(val)
+        if (pos <= 0 || pos > this.size + 1) {
+            console.log("not posible")
+            return
+        }
+        let temp = this.head
+        for (let i = 1; i < pos - 1; i++) {
+            temp = temp.next
+        }
+        newNode.next = temp.next
+        temp.next = newNode
+    }
+
     printLL(head) {
         if (head == null) {
             console.log("Empty Linked List");
@@ -100,4 +115,6 @@ obj.printLL(obj.head);
 obj.deletedFirst()
 obj.printLL(obj.head);
 obj.deletedLast()
+obj.printLL(obj.head)
+obj.inserAtPos(49, 2)
 obj.printLL(obj.head)
