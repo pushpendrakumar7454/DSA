@@ -4,11 +4,11 @@ class Node {
         this.next = null
     }
 }
-let head = new Node(20)
-head.next = new Node(23)
-head.next.next = new Node(10)
-head.next.next.next = new Node(17)
-head.next.next.next.next = new Node(34)
+let head = new Node(1)
+head.next = new Node(2)
+head.next.next = new Node(3)
+head.next.next.next = new Node(4)
+head.next.next.next.next = new Node(5)
 
 
 function findMiddle(head) {
