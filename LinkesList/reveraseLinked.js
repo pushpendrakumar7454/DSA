@@ -25,15 +25,14 @@ function reverseList(head) {
     return prev
 }
 
-
-
 function printList(head) {
     let current = head
     let result = ""
+
     while (current != null) {
         result += current.val
         if (current.next != null) {
-            result += "->"
+            result += " -> "
         }
         current = current.next
     }
