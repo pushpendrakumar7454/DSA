@@ -26,11 +26,8 @@ let addtwonumber = function(l1, l2) {
         let val2 = l2 ? l2.val : 0
 
         let sum = val1 + val2 + carry
-
         carry = Math.floor(sum / 10)
-
         curr.next = new Node(sum % 10)
-
         curr = curr.next
 
         if (l1) l1 = l1.next
