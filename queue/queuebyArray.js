@@ -9,7 +9,7 @@ class Node {
     }
     dequeue() {
         if (this.arr.length === 0) {
-            console.log("empty queue")
+            console.log("Empty Queue")
             return
         }
         this.arr.shift()
