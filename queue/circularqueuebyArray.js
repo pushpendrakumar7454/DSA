@@ -17,6 +17,30 @@ class Queue {
         this.rear = (this.rear + 1) % this.size
         this.arr[this.rear] = val
     }
+    printQueue() {
+        if (this.front == -1) {
+            console.log("this is Empty Queue ")
+            return
+        }
+        let i = this.front
+        while (true) {
+            process.stdout.write(this.arr[i] + " ")
+            if (i === this.rear) break
+            i = (i + 1) % this.size
+        }
+        console.log()
+    }
+    dequeue() {
+
+        if (this.front == -1) {
+            console.log("this is empty queue")
+            return
+        }
+        let deleteEle = this.arr[this.front]
+        if (this.front === this.rear) this.front = this.rear = -1
+        else this.front = (this.front + 1) % this.size
+        return deleteEle
+    }
 
 }
 
@@ -26,5 +50,6 @@ q.enqueue(20)
 q.enqueue(30)
 q.enqueue(40)
 q.enqueue(50)
-console.log(q.arr)
-q.enqueue(10)
+q.printQueue()
+q.dequeue()
+q.printQueue()
