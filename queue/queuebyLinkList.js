@@ -26,7 +26,7 @@ class Queue {
     printQueue(val) {
         if (this.head == null) {
 
-            console.log("this is empty Linked List")
+            console.log("this is empty queue List")
             return
         }
         let temp = this.head
@@ -41,7 +41,7 @@ class Queue {
     dequeue(val) {
         let newNode = new Node(val)
         if (this.head == null) {
-            console.log("this is empty Linked List")
+            console.log("this is empty queue List")
             return
         }
         this.head = this.head.next
