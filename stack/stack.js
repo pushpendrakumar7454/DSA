@@ -4,10 +4,11 @@ class Stack {
     }
     push(val) {
         this.arr.push(val)
+
     }
     pop() {
         if (this.arr.length === 0) {
-            console.log("Empty Stack")
+            console.log(("empty Stack"))
             return
         }
         this.arr.pop()
@@ -20,7 +21,6 @@ st.push(20)
 st.push(30)
 st.push(40)
 st.push(50)
-
 console.log(st.arr)
 st.pop()
 console.log(st.arr)
