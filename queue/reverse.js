@@ -1,17 +1,24 @@
 class Queue {
-    reverseQueue(q) {
-        let st = []
-        while (q.length != 0) {
-            st.push(q.shift())
-        }
-        while (st.length != 0) {
-            q.push(st.pop())
-        }
+    constructor() {
+        this.arr = []
+
     }
+    push(val) {
+
+        this.arr.push(val)
+    }
+    reverse() {
+        this.arr.reverse()
+    }
+
 }
 
-let q = new Queue()
-let qe = [1, 2, 3, 4, 5]
-console.log(qe)
-q.reverseQueue(qe)
-console.log(qe)
+let qu = new Queue()
+qu.push(1)
+qu.push(2)
+qu.push(3)
+qu.push(4)
+qu.push(5)
+console.log(qu.arr)
+qu.reverse()
+console.log(qu.arr)
