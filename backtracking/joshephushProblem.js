@@ -5,13 +5,13 @@ function solve(arr, i, k) {
     return solve(arr, remove, k)
 }
 
-
 function findOfWinner(n, k) {
     let arr = []
     for (let i = 1; i <= n; i++) arr.push(i)
     k = k - 1
     return solve(arr, 0, k)
+
 }
 
-let r = findOfWinner(5, 2)
-console.log(r)
+let winner = findOfWinner(5, 2)
+console.log(winner)
