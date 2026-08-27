@@ -14,9 +14,6 @@ function placeAtRight(a, arr) {
     placeAtRight(a, arr)
     arr.push(x)
 }
-
-let arr = [10, 2, 12, 34]
-
+let arr = [4, 10, 21, 3, 7]
 sort(arr)
-
 console.log(arr)
