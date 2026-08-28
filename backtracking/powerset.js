@@ -12,6 +12,7 @@ function solve(ans, curr, i, nums) {
 
 function powerSet(nums) {
     let ans = []
+
     solve(ans, [], 0, nums)
     return ans
 }
