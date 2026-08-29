@@ -46,16 +46,9 @@ function solveSudoku(mat) {
             return solve(mat, ni, nj)
         }
 
-
-        // Try 1 to 9
         for (let ch = "1"; ch <= "9"; ch++) {
-
             if (isValid(mat, i, j, ch)) {
-
-                // Choose
                 mat[i][j] = ch
-
-                // Explore
                 if (solve(mat, ni, nj)) {
                     return true
                 }
@@ -64,15 +57,10 @@ function solveSudoku(mat) {
         }
         return false
     }
-
-
     solve(mat, 0, 0)
-
     return mat
 }
 
-
-// Example
 let mat = [
     ["5", "3", ".", ".", "7", ".", ".", ".", "."],
     ["6", ".", ".", "1", "9", "5", ".", ".", "."],
