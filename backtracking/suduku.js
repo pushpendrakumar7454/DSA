@@ -1,22 +1,15 @@
 function solveSudoku(mat) {
-
     function isValid(mat, row, col, ch) {
-
-        // Check row
         for (let j = 0; j < 9; j++) {
             if (mat[row][j] === ch) {
                 return false
             }
         }
-
-        // Check column
         for (let i = 0; i < 9; i++) {
             if (mat[i][col] === ch) {
                 return false
             }
         }
-
-        // Check 3 x 3 box
         let startRow = Math.floor(row / 3) * 3
         let startCol = Math.floor(col / 3) * 3
 
@@ -34,8 +27,6 @@ function solveSudoku(mat) {
 
 
     function solve(mat, i, j) {
-
-        // All rows completed
         if (i === 9) {
             return true
         }
@@ -43,7 +34,6 @@ function solveSudoku(mat) {
         let ni
         let nj
 
-        // Move to next row
         if (j === 8) {
             ni = i + 1
             nj = 0
@@ -52,8 +42,6 @@ function solveSudoku(mat) {
             nj = j + 1
         }
 
-
-        // Already filled cell
         if (mat[i][j] !== ".") {
             return solve(mat, ni, nj)
         }
@@ -71,12 +59,9 @@ function solveSudoku(mat) {
                 if (solve(mat, ni, nj)) {
                     return true
                 }
-
-                // Backtrack
                 mat[i][j] = "."
             }
         }
-
         return false
     }
 
