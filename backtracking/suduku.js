@@ -13,7 +13,7 @@ function solve(mat, i, j) {
     if (mat[i][j] !== ".") {
         if (solve(mat, ni, nj)) return true
     } else {
-        for (let ch = 0; ch < 9; ch++) {
+        for (let ch = 0; ch <= 9; ch++) {
             if (isValid(mat, i, j, ch)) {
                 mat[i][j] = ch
                 if (solve(mat, ni, nj)) return true
