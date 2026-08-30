@@ -1,30 +1,25 @@
 function solve(mat, i, j) {
+    if (i == mat.length) return true
 
-    if (i === mat.length) return true
     let ni = 0;
     let nj = 0;
-    if (j === mat[0].length) {
+    if (j == mat[0].length - 1) {
         ni = i + 1
         nj = 0
     } else {
         ni = i
         nj = j + 1
     }
-
     if (mat[i][j] !== ".") {
-        if (solve(mat, ni, nj)) {
-            return true
-        }
+        if (solve(mat, ni, nj)) return true
     } else {
-        for (let ch = 1; ch <= 9; ch++) {
+        for (let ch = 0; ch < 9; ch++) {
             if (isValid(mat, i, j, ch)) {
                 mat[i][j] = ch
-                if (solve(mat, ni, nj)) {
-                    return true
-
-                }
-                mat[i][j] = "."
+                if (solve(mat, ni, nj)) return true
             }
+
+            mat[i][j] = "."
         }
     }
     return false
@@ -35,11 +30,11 @@ function isValid(mat, i, j, ch) {
         if (mat[i][k] == ch) return false
         if (mat[k][j] == ch) return false
     }
-    let startRow = Math.floor(i / 3) * 3
-    let startColumn = Math.floor(j / 3) * 3
 
-    for (let r = startRow; r < startRow + 3; r++) {
-        for (let c = startColumn; c < startColumn + 3; c++) {
+    let row = Math.floor(i / 3) * 3
+    let column = Math.floor(j / 3) * 3
+    for (let r = row; r < row + 3; r++) {
+        for (let c = column; c < column + 3; c++) {
             if (mat[r][c] == ch) return false
         }
     }
