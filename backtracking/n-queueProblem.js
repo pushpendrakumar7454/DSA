@@ -1,75 +1,56 @@
 function isValid(mat, i, j) {
-    // Check same column
-    let row = i;
+    let row = i
     while (row >= 0) {
-        if (mat[row][j] === "Q") {
-            return false;
+        if (mat[row][j] == "Q") {
+            return false
         }
-        row--;
+        row--
     }
 
-    // Check upper-left diagonal
-    row = i;
-    let col = j;
-
+    row = i
+    let col = j
     while (row >= 0 && col >= 0) {
-        if (mat[row][col] === "Q") {
-            return false;
+        if (mat[row][col] == "Q") {
+            return false
         }
-        row--;
-        col--;
+        row--
+        col--
     }
-
-    // Check upper-right diagonal
-    row = i;
-    col = j;
-
+    row = i
+    col = j
     while (row >= 0 && col < mat[0].length) {
         if (mat[row][col] === "Q") {
-            return false;
+            return false
         }
-        row--;
-        col++;
+        row--
+        col++
     }
-
-    return true;
+    return true
 }
 
 
 function solve(mat, i, ans) {
-    // All queens placed
     if (i === mat.length) {
-        let curr = [];
-
+        let curr = []
         for (let t = 0; t < mat.length; t++) {
-            let s = "";
-
+            let s = ""
             for (let r = 0; r < mat[0].length; r++) {
-                if (mat[t][r] === "Q") {
-                    s += "Q";
+                if (mat[t][r] == "Q") {
+                    s += 'Q'
                 } else {
-                    s += ".";
+                    s += "."
                 }
             }
-
-            curr.push(s);
+            curr.push(s)
         }
-
-        ans.push(curr);
-        return;
+        ans.push(curr)
+        return
     }
-
-    // Try every column
     for (let col = 0; col < mat[0].length; col++) {
         if (isValid(mat, i, col)) {
-            // Place queen
-            mat[i][col] = "Q";
-
-            // Move to next row
-            solve(mat, i + 1, ans);
-
-            // Backtrack
-            mat[i][col] = ".";
+            mat[i][col] = "Q"
+            solve(mat, i + 1, ans)
+            mat[i][col] = "."
         }
     }
 }
