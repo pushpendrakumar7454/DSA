@@ -1,5 +1,5 @@
 function solve(ans, curr, isVis, i, nums) {
-    if (i == nums.length) {
+    if (i === nums.length) {
         ans.push([...curr])
         return
     }
@@ -8,11 +8,10 @@ function solve(ans, curr, isVis, i, nums) {
         if (!isVis[j]) {
             curr.push(nums[j])
             isVis[j] = true
-
             solve(ans, curr, isVis, i + 1, nums)
-
             curr.pop()
             isVis[j] = false
+
         }
     }
 }
