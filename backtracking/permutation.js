@@ -3,7 +3,6 @@ function solve(ans, curr, isVis, i, nums) {
         ans.push([...curr])
         return
     }
-
     for (let j = 0; j < nums.length; j++) {
         if (!isVis[j]) {
             curr.push(nums[j])
@@ -22,5 +21,7 @@ function permute(nums) {
     solve(ans, [], [], 0, nums)
     return ans
 }
+
+
 
 console.log(permute([1, 2, 3]))
