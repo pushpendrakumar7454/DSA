@@ -9,12 +9,12 @@ function solve(ans, curr, i, nums) {
     }
 }
 
+
 function subsetsWithDup(nums) {
     nums.sort((a, b) => a - b)
     let ans = []
     solve(ans, [], 0, nums)
     return ans
-
 }
 
 console.log(subsetsWithDup([1, 2, 3]))
