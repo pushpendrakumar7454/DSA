@@ -16,11 +16,10 @@ function solve(ans, curr, isVis, i, nums) {
     }
 }
 
+
 function permute(nums) {
     let ans = []
-
     solve(ans, [], [], 0, nums)
-
     return ans
 }
 
