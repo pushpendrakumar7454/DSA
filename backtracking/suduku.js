@@ -1,6 +1,5 @@
 function solve(mat, i, j) {
     if (i == mat.length) return true
-
     let ni = 0;
     let nj = 0;
     if (j == mat[0].length - 1) {
