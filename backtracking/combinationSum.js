@@ -15,11 +15,11 @@ function solve(ans, curr, i, nums, t) {
     solve(ans, curr, i + 1, nums, t)
 }
 
+
 function combinationSum(nums, target) {
     let ans = []
     solve(ans, [], 0, nums, target)
     return ans
 }
-
 
 console.log(combinationSum([2, 3, 6, 7], 7))
