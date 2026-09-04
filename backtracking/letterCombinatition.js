@@ -3,7 +3,6 @@ function solve(ans, curr, i, digits, map) {
         ans.push(curr)
         return
     }
-
     let temp = map.get(digits.charAt(i))
     for (let j = 0; j < temp.length; j++) {
         solve(ans, curr + temp.charAt(j), i + 1, digits, map)
@@ -21,11 +20,9 @@ function letterCombination(digits) {
     map.set("7", "pqrs")
     map.set("8", "tuv")
     map.set("9", "wxyz")
-
     let ans = []
     solve(ans, "", 0, digits, map)
     return ans
 }
-
 
 console.log(letterCombination("23"))
