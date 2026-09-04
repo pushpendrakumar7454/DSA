@@ -16,11 +16,8 @@ function solve(ans, curr, i, nums, t) {
 }
 
 function combinationSum(nums, target) {
-
     let ans = []
-
     solve(ans, [], 0, nums, target)
-
     return ans
 }
 
