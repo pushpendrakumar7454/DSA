@@ -6,11 +6,11 @@ class Node {
     }
 }
 
+
 class Tree {
     constructor() {
         this.root = null
     }
-
     buildTree() {
         this.root = new Node(1)
         this.root.left = new Node(2)
@@ -20,46 +20,32 @@ class Tree {
         this.root.right.left = new Node(6)
         this.root.right.right = new Node(7)
     }
-
     inorder(node, ans = []) {
-        if (node === null) {
-            return ans
-        }
+        if (node === null) return
         this.inorder(node.left, ans)
         ans.push(node.val)
         this.inorder(node.right, ans)
         return ans
     }
-
     preorder(node, ans = []) {
-        if (node === null) {
-            return ans
-        }
-
+        if (node === null) return
         ans.push(node.val)
         this.preorder(node.left, ans)
         this.preorder(node.right, ans)
-
         return ans
+
     }
-
     postorder(node, ans = []) {
-        if (node === null) {
-            return ans
-        }
-
+        if (node == null) return null
         this.postorder(node.left, ans)
         this.postorder(node.right, ans)
-        ans.push(node.val)
-
+        ans.push(this.val)
         return ans
     }
 }
 
-const tree = new Tree()
-
+let tree = new Tree()
 tree.buildTree()
-
-console.log("Inorder:", tree.inorder(tree.root).join(" "))
-console.log("Preorder:", tree.preorder(tree.root).join(" "))
-console.log("Postorder:", tree.postorder(tree.root).join(" "))
+console.log(tree.inorder(tree.root).join(" "))
+console.log(tree.preorder(tree.root).join(" "))
+console.log(tree.postorder(tree.root).join(" "))
