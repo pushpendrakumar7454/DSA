@@ -10,6 +10,7 @@ class Tree {
     constructor() {
         this.root = null
     }
+
     buildTree() {
         this.root = new Node(1)
         this.root.left = new Node(2)
