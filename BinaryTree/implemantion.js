@@ -13,13 +13,10 @@ class Tree {
 
     buildTree() {
         this.root = new Node(1)
-
         this.root.left = new Node(2)
         this.root.right = new Node(3)
-
         this.root.left.left = new Node(4)
         this.root.left.right = new Node(5)
-
         this.root.right.left = new Node(6)
         this.root.right.right = new Node(7)
     }
@@ -28,11 +25,9 @@ class Tree {
         if (node === null) {
             return ans
         }
-
         this.inorder(node.left, ans)
         ans.push(node.val)
         this.inorder(node.right, ans)
-
         return ans
     }
 
