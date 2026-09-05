@@ -47,6 +47,7 @@ class Tree {
 let tree = new Tree()
 
 tree.buildTree()
+
 console.log(tree.inorder(tree.root).join(" "))
 console.log(tree.preorder(tree.root).join(" "))
 console.log(tree.postorder(tree.root).join(" "))
