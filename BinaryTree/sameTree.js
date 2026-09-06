@@ -6,6 +6,7 @@ class Node {
     }
 }
 
+
 function isSameTree(p, q) {
     if (p === null && q === null) return true
     if (p === null || q === null) return false
@@ -16,6 +17,7 @@ function isSameTree(p, q) {
 let p = new Node(1)
 p.left = new Node(2)
 p.right = new Node(3)
+
 
 let q = new Node(1)
 q.left = new Node(2)
