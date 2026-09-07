@@ -6,21 +6,17 @@ class Node {
     }
 }
 
+
 function hasPathSum(root, targetSum) {
     if (root === null) return false
 
-    // Leaf node
     if (root.left === null && root.right === null) {
         return root.val === targetSum
     }
-
-    const remainingSum = targetSum - root.val
-
-    return (
-        hasPathSum(root.left, remainingSum) ||
-        hasPathSum(root.right, remainingSum)
-    )
+    let rimainingSum = targetSum - root.val
+    return hasPathSum(root.left, rimainingSum) || hasPathSum(root.right, rimainingSum)
 }
+
 
 let root = new Node(5)
 
