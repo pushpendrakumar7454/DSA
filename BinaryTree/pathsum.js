@@ -9,14 +9,13 @@ class Node {
 
 function hasPathSum(root, targetSum) {
     if (root === null) return false
-
     if (root.left === null && root.right === null) {
         return root.val === targetSum
     }
-    let rimainingSum = targetSum - root.val
-    return hasPathSum(root.left, rimainingSum) || hasPathSum(root.right, rimainingSum)
-}
 
+    let remainingSum = targetSum - root.val
+    return hasPathSum(root.left, remainingSum) || hasPathSum(root.right, remainingSum)
+}
 
 let root = new Node(5)
 
