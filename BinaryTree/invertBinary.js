@@ -9,17 +9,16 @@ class Node {
 function invertTree(root) {
     if (root === null) return null
 
-    // left aur right ko swap karo
     let temp = root.left
     root.left = root.right
     root.right = temp
 
-    // recursively left aur right ko invert karo
     invertTree(root.left)
     invertTree(root.right)
-
     return root
 }
+
+
 
 let root = new Node(4)
 
