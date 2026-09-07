@@ -6,6 +6,7 @@ class Node {
     }
 }
 
+
 function invertTree(root) {
     if (root === null) return null
 
@@ -17,8 +18,6 @@ function invertTree(root) {
     invertTree(root.right)
     return root
 }
-
-
 
 let root = new Node(4)
 
