@@ -6,26 +6,30 @@ class Node {
     }
 }
 
-function issmetric(root) {
+
+function isSymmetric(root) {
     if (root === null) return true
 
-    function isMinner(left, right) {
-        if (left == null && right === null) return true
-        if (left === null || right == -null) return false
+    function isMinor(left, right) {
+        if (left === null && right === null) return true
+        if (left === null || right === null) return false
         if (left.val !== right.val) return false
-        return isMinner(left.left, right.right) && isMinner(left.right, right.left)
+        return isMinor(left.left, right.right) && isMinor(left.right, right.left)
     }
-    return isMinner(root.left, root.right)
-
+    return isMinor(root.left, root.right)
 }
 
+
 let root = new Node(1)
+
 root.left = new Node(2)
 root.right = new Node(2)
+
 
 root.left.left = new Node(3)
 root.left.right = new Node(4)
 
 root.right.left = new Node(4)
 root.right.right = new Node(3)
-console.log(issmetric(root))
+
+console.log(isSymmetric(root))
