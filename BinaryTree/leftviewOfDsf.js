@@ -7,26 +7,20 @@ class Node {
 }
 
 function leftView(root) {
-    if (root == null) return
-
+    if (root === null) return
     let maxLevel = -1
 
     function dfs(root, level) {
-        if (root == null) return
-
+        if (root === null) return
         if (level > maxLevel) {
             console.log(root.val)
             maxLevel = level
         }
-
         dfs(root.left, level + 1)
-
         dfs(root.right, level + 1)
     }
-
     dfs(root, 0)
 }
-
 
 let root = new Node(1)
 
