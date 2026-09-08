@@ -8,7 +8,6 @@ class Node {
 
 function leftView(root) {
     if (root === null) return
-
     let maxLevel = -1
 
     function dfs(root, level) {
@@ -17,9 +16,11 @@ function leftView(root) {
             console.log(root.val)
             maxLevel = level
         }
+        dfs(root.left, level + 1)
+        dfs(root.right, level + 1)
     }
+    dfs(root, 0)
 }
-
 let root = new Node(1)
 
 root.left = new Node(2)
