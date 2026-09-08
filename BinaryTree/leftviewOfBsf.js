@@ -16,12 +16,8 @@ function leftView(root) {
             if (i === 0) {
                 console.log(node.val)
             }
-            if (node.left) {
-                queue.push(node.left)
-            }
-            if (node.right) {
-                queue.push(node.right)
-            }
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
         }
     }
 }
