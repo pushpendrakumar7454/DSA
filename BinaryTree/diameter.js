@@ -10,7 +10,7 @@ function diameterOfTree(root) {
     let ans = 0
 
     function solve(root) {
-        if (root == null) return 0
+        if (root === null) return 0
         let l = solve(root.left)
         let r = solve(root.right)
         ans = Math.max(ans, l + r)
