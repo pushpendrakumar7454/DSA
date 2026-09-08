@@ -7,16 +7,12 @@ class Node {
 }
 
 function leftView(root) {
-    if (root == null) return
-
+    if (root === null) return
     let queue = [root]
-
     while (queue.length > 0) {
         let size = queue.length
-
         for (let i = 0; i < size; i++) {
             let node = queue.shift()
-
             if (i === 0) {
                 console.log(node.val)
             }
@@ -29,6 +25,7 @@ function leftView(root) {
         }
     }
 }
+
 
 let root = new Node(1)
 
