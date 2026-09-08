@@ -14,23 +14,20 @@ function leftView(root) {
     function dfs(root, level) {
         if (root == null) return
 
-        // Level par pehli node
         if (level > maxLevel) {
             console.log(root.val)
             maxLevel = level
         }
 
-        // Pehle left jao
         dfs(root.left, level + 1)
 
-        // Phir right jao
         dfs(root.right, level + 1)
     }
 
     dfs(root, 0)
 }
 
-// Tree
+
 let root = new Node(1)
 
 root.left = new Node(2)
