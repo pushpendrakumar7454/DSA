@@ -6,8 +6,8 @@ class Node {
     }
 }
 
+
 function leftView(root) {
-    if (root === null) return
     let queue = [root]
     while (queue.length > 0) {
         let size = queue.length
@@ -25,7 +25,6 @@ function leftView(root) {
         }
     }
 }
-
 
 let root = new Node(1)
 
