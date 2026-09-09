@@ -6,7 +6,6 @@ class Node {
     }
 }
 
-
 class Pair {
     constructor(ele, level) {
         this.ele = ele
@@ -14,10 +13,10 @@ class Pair {
     }
 }
 
+
 class Solution {
     solve(root, hd, level, map) {
         if (root === null) return
-
         if (!map.has(hd) || level < map.get(hd).level) {
             map.set(hd, new Pair(root.data, level))
         }
@@ -36,6 +35,8 @@ class Solution {
         return ans
     }
 }
+
+
 // Create Tree
 let root = new Node(1)
 
