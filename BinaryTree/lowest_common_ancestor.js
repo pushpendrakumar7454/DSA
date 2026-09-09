@@ -8,37 +8,16 @@ class Node {
 
 
 function solve(root, p, q) {
-
-    // Base case
-    if (root === null) {
-        return null
-    }
-
-    // Agar current node p ya q hai
+    if (root === null) return null
     if (root.val === p || root.val === q) {
         return root
     }
-
-    // Left subtree
     let left = solve(root.left, p, q)
-
-    // Right subtree
     let right = solve(root.right, p, q)
-
-    // Left mein nahi mila
-    if (left === null) {
-        return right
-    }
-
-    // Right mein nahi mila
-    if (right === null) {
-        return left
-    }
-
-    // Dono side p aur q mile
+    if (left === null) return right
+    if (right === null) return left
     return root
 }
-
 
 // Create Tree
 let root = new Node(1)
