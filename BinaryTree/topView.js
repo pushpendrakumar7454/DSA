@@ -14,30 +14,21 @@ class Node {
 }
 
 class Solution {
-
     solve(root, hd, level, map) {
         if (root === null) return
 
-        // Agar horizontal distance pehli baar mila
-        // ya current node upar level par hai
         if (!map.has(hd) || level < map.get(hd).level) {
             map.set(hd, new Pair(root.data, level))
         }
-
         this.solve(root.left, hd - 1, level + 1, map)
         this.solve(root.right, hd + 1, level + 1, map)
     }
 
     topView(root) {
         let ans = []
-
         if (root === null) return ans
-
         let map = new Map()
-
         this.solve(root, 0, 0, map)
-
-        // Horizontal distance ko sort karo
         let sortedKey = [...map.keys()].sort((a, b) => a - b)
 
         for (let i = 0; i < sortedKey.length; i++) {
