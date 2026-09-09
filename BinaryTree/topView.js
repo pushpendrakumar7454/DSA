@@ -1,15 +1,16 @@
-class Pair {
-    constructor(ele, level) {
-        this.ele = ele
-        this.level = level
-    }
-}
-
 class Node {
     constructor(data) {
         this.data = data
         this.left = null
         this.right = null
+    }
+}
+
+
+class Pair {
+    constructor(ele, level) {
+        this.ele = ele
+        this.level = level
     }
 }
 
@@ -23,23 +24,18 @@ class Solution {
         this.solve(root.left, hd - 1, level + 1, map)
         this.solve(root.right, hd + 1, level + 1, map)
     }
-
     topView(root) {
         let ans = []
         if (root === null) return ans
         let map = new Map()
         this.solve(root, 0, 0, map)
         let sortedKey = [...map.keys()].sort((a, b) => a - b)
-
         for (let i = 0; i < sortedKey.length; i++) {
             ans.push(map.get(sortedKey[i]).ele)
         }
-
         return ans
     }
 }
-
-
 // Create Tree
 let root = new Node(1)
 
