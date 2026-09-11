@@ -1,4 +1,3 @@
-
 class Node{
     constructor(val){
         this.val=val
@@ -12,11 +11,13 @@ class BST{
     constructor(){
         this.root=null
     }
+
     inserNote(root,val){
         if(root===null){
             root=new Node(val)
             return root
         }
+
         if(root.val>val){
             root.left=this.inserNote(root.left,val)
         }else if(root.val<val){
@@ -27,11 +28,13 @@ class BST{
 
     LDR(root){
         if(root===null) return
+
         this.LDR(root.left)
         process.stdout.write(root.val+" ")
         this.LDR(root.right)
     }
 }
+
 
 let obj = new BST()
 
@@ -44,5 +47,4 @@ obj.root = obj.inserNote(obj.root, 60)
 
 
 console.log("Inorder:")
-
 obj.LDR(obj.root)
