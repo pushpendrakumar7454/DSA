@@ -5,27 +5,30 @@ class Node {
         this.right = null
     }
 }
+
+
 function pathSum(root,targetSum){
     let total=0
+
     function dfs(root,target){
-        if(root===null) return 
+        if(root===null) return
         solve(root,target,0)
         dfs(root.left,target,0)
         dfs(root.right,target)
     }
-function solve(root,target,currSum){
-    if(root===null) return
-    currSum+=root.val
-    if(currSum===target){
-        total+=1
+
+    function solve(root,target,currSum){
+        if(root==null) return
+        currSum+=root.val
+
+        if(target===currSum){
+            total+=1
+        }
+        solve(root.left,target,currSum)
+        solve(root.right,target,currSum)
     }
-
-    solve(root.left,target,currSum)
-    solve(root.right,target,currSum)
-}
-dfs(root,targetSum)
-return total
-
+    dfs(root,targetSum)
+    return total
 }
 // Tree print karne ke liye
 function printTree(root) {
