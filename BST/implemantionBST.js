@@ -1,47 +1,37 @@
-class Node {
-    constructor(val) {
-        this.val = val
-        this.left = null
-        this.right = null
+
+class Node{
+    constructor(val){
+        this.val=val
+        this.left=null
+        this.right=null
     }
 }
 
 
-class BST {
-    constructor() {
-        this.root = null
+class BST{
+    constructor(){
+        this.root=null
     }
-
-    inserNote(root, val) {
-
-        if (root == null) {
-            root = new Node(val)
+    inserNote(root,val){
+        if(root===null){
+            root=new Node(val)
             return root
         }
-
-        if (root.val > val) {
-            root.left = this.inserNote(root.left, val)
+        if(root.val>val){
+            root.left=this.inserNote(root.left,val)
+        }else if(root.val<val){
+            root.right=this.inserNote(root.right,val)
         }
-        else if (root.val < val) {
-            root.right = this.inserNote(root.right, val)
-        }
-
         return root
     }
 
-
-    LDR(root) {
-
-        if (root == null) return
-
+    LDR(root){
+        if(root===null) return
         this.LDR(root.left)
-
-        process.stdout.write(root.val + " ")
-
+        process.stdout.write(root.val+" ")
         this.LDR(root.right)
     }
 }
-
 
 let obj = new BST()
 
