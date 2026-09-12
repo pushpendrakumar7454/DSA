@@ -9,13 +9,9 @@ class TreeNode{
 
 function search(root,target){
     if(root===null) return false
-
     if(root.val===target) return true
 
-    return (search(root.left,target)||
-    search(root.right,target)
-)
-
+    return (search(root.left,target)||search(root.right,target))
 }
 
 
