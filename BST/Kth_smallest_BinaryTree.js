@@ -11,20 +11,16 @@ function kthSmallest(root, k) {
     function inorder(node) {
         if (node === null) return null;
         const left = inorder(node.left);
-
         if (left !== null) {
             return left;
         }
-
         count++;
 
         if (count === k) {
             return node.val;
         }
-
         return inorder(node.right);
     }
-
     return inorder(root);
 }
 
