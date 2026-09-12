@@ -1,24 +1,21 @@
-class TreeNode {
-    constructor(val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
+class TreeNode{
+    constructor(val){
+        this.val=val
+        this.left=null
+        this.right=null
     }
 }
 
-function search(root, target) {
-    if (root === null) {
-        return false;
-    }
 
-    if (root.val === target) {
-        return true;
-    }
+function search(root,target){
+    if(root===null) return false
 
-    return (
-        search(root.left, target) ||
-        search(root.right, target)
-    );
+    if(root.val===target) return true
+
+    return (search(root.left,target)||
+    search(root.right,target)
+)
+
 }
 
 
