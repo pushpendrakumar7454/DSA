@@ -6,29 +6,25 @@ class TreeNode{
     }
 }
 
-
 class Solution{
     constructor(){
         this.root=null
-    
     }
-
-    helper(root,max,min){
+    helper(root,min,max){
         if(root===null) return true
 
-        if((max!=null && root.val>=max)||
-        (min!=null && root.val<=min)){
-            return false
-        }
-        return (this.helper(root.left,min,root.val) &&
-        this.helper(root.right,root.val,max)
-    )
+        if((max!==null && root.val>=max)||(min!==null && root.val<=min)) return false
+
+        return (this.helper(root.left,min,root.val)&&
+        this.helper(root.right,root.val,max))
+
     }
+
     isValidBST(root){
-        result(root,null,null)
+        return this.helper(root,null,null)
     }
 }
-
+ 
 const root = new TreeNode(5);
 
 root.left = new TreeNode(3);
