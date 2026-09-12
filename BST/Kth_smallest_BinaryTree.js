@@ -6,22 +6,21 @@ class TreeNode {
     }
 }
 
-function kthSmallest(root, k) {
-    let count = 0;
-    function inorder(node) {
-        if (node === null) return null;
-        const left = inorder(node.left);
-        if (left !== null) {
-            return left;
-        }
-        count++;
+function kthSmallest(root,k){
+    let count=0;
 
-        if (count === k) {
-            return node.val;
-        }
-        return inorder(node.right);
+   function inorder(node){
+        if(node===null) return null
+        let left=inorder(node.left)
+        if(left!==null) return left
+        count++
+
+        if(count===k) return node.val
+
+        return inorder(node.right)
     }
-    return inorder(root);
+return inorder(root)
+
 }
 
 
