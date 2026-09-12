@@ -11,9 +11,10 @@ function kthSmallest(root,k){
 
     function inorder(node){
         if(node===null) return null
-        let left=inorder(node.left)
 
+        let left=inorder(node.left)
         if(left!==null) return left
+
         count++
 
         if(count===k) return node.val
@@ -21,7 +22,6 @@ function kthSmallest(root,k){
     }
     return inorder(root)
 }
-
 // Create BST
 const root = new TreeNode(5);
 
