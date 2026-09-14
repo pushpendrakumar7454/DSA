@@ -13,5 +13,4 @@ function maxSubarraySum(arr, k) {
 }
 const arr = [2, 1, 5, 1, 3, 2];
 const k = 3;
-
 console.log(maxSubarraySum(arr, k));
