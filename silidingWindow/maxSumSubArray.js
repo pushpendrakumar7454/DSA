@@ -1,16 +1,19 @@
-function maxSubarraySum(arr, k) {
-    let maxSum = -Infinity;
+function maxSubArray(arr,k){
+    let maxSum=-Infinity
 
-    for (let i = 0; i <= arr.length - k; i++) {
-        let sum = 0;
+    for(let i=0;i<=arr.length-k;i++){
+        let sum=0
 
-        for (let j = i; j < i + k; j++) {
-            sum += arr[j];
+        for(let j=i;j<i+k;j++){
+            sum+=arr[j]
         }
-        maxSum = Math.max(maxSum, sum);
+        maxSum=Math.max(maxSum,sum)
     }
-    return maxSum;
+    return maxSum
 }
-const arr = [2, 1, 5, 1, 3, 2];
-const k = 3;
-console.log(maxSubarraySum(arr, k));
+
+
+const arr=[3,4,5,6,8,9]
+let k=2
+
+console.log(maxSubArray(arr,k))
