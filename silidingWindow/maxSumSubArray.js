@@ -1,3 +1,4 @@
+//brute Forse
 function maxSubArray(arr,k){
     let maxSum=-Infinity
 
