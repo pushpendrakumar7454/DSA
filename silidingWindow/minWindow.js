@@ -16,7 +16,6 @@ function minWindow(s, t) {
         }
 
         count[s[right]] = (count[s[right]] || 0) - 1
-
         while (required === 0) {
             if (right - left + 1 < minLength) {
                 minLength = right - left + 1
