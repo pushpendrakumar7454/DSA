@@ -11,7 +11,6 @@ function minWindow(s, t) {
     let start = 0
 
     for (let right = 0; right < s.length; right++) {
-
         if (count[s[right]] > 0) {
             required--
         }
@@ -19,14 +18,11 @@ function minWindow(s, t) {
         count[s[right]] = (count[s[right]] || 0) - 1
 
         while (required === 0) {
-
             if (right - left + 1 < minLength) {
                 minLength = right - left + 1
                 start = left
             }
-
             count[s[left]]++
-
             if (count[s[left]] > 0) {
                 required++
             }
